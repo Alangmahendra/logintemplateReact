@@ -1,23 +1,21 @@
 import history from '../history'
 
-export function userLoginAction(email, password) {
+export function resetPassword(email) {
     return dispatch => {
         dispatch(loading())
-        fetch('http://66.42.62.145/auth/login/', {
+        fetch('http://66.42.62.145/auth/password/reset/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email: email, password: password })
+            body: JSON.stringify({ email: email})
         }).then(response => response.json())
             .then(json => {
                 const data = json
                 console.log(data)
-                localStorage.setItem('Usertoken',data.token)
+                // localStorage.setItem('token',data.token)
                 dispatch(success(data))
-                if(localStorage.getItem('Usertoken')){
-                    history.push('/dashboardpage')
-                }
+                history.push('/')
             })
             .catch(err => {
                 dispatch(error())

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactCSSTG from 'react-addons-css-transition-group'
 import './login.css'
-import {adminLoginAction }from '../actions/adminLogin'
+import { adminLoginAction } from '../actions/adminLogin'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Logo from './Logo'
@@ -20,7 +20,7 @@ class AdminLogin extends Component {
     })
   }
 
-  componentDidMount(){
+  componentDidMount() {
     console.log(this.props)
   }
 
@@ -33,16 +33,16 @@ class AdminLogin extends Component {
     return (
       <ReactCSSTG transitionName="animation" transitionAppear={true} transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
         <div className="Modal">
-          <Logo span="MASUK SEBAGAI ADMIN"/>
+          <Logo span="MASUK SEBAGAI ADMIN" />
           <form>
             <div className="Input">
               <center>
-              <input type="text" name="adminName" placeholder="adminName" value={adminName} onChange={this.handleOnChange} required   />
+                <input type="text" name="adminName" placeholder="adminName" value={adminName} onChange={this.handleOnChange} required />
               </center>
             </div>
             <div className="Input">
               <center>
-              <input type="password" name="password" placeholder="password" value={password} onChange={this.handleOnChange} required autoComplete='false' />
+                <input type="password" name="password" placeholder="password" value={password} onChange={this.handleOnChange} required autoComplete='false' />
               </center>
             </div>
             <button onClick={this.submitAction}>MASUK</button>

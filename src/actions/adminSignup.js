@@ -6,7 +6,7 @@ export default function adminSignupAction(username,password){
         http.post('/admin/signup',{username:username,password:password})
         .then(response => {
            console.log(response.data.data)
-           success(response.data.data)
+            dispatch(success(response.data.data))
         })
         .catch(err=>{
             dispatch(error())

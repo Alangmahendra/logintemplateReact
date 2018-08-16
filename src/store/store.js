@@ -5,12 +5,14 @@ import userLogin from '../reducers/usersLogin'
 import adminLogin from '../reducers/adminLogin'
 import adminSignup from '../reducers/adminSignup'
 import userForm from '../reducers/userForm'
+import resetPassword from '../reducers/resetPassword'
 
 const rootReducers = combineReducers({
     adminLogin,
     adminSignup,
     userLogin,
-    userForm
+    userForm,
+    resetPassword
 })
 export default createStore(
     rootReducers,

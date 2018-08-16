@@ -56,7 +56,9 @@ body {
 .Input input[type='password'] ~ label::before {
   content: "";
 }
-
+input::placeholder {
+  color: white;
+}
 label {
   font-family: FontAwesome;
   color: white;
@@ -83,6 +85,22 @@ form button {
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
   cursor: pointer;
+}
+
+form button:disabled,button[disabled] {
+  position: relative ;
+  margin: 15px 0 15px 0;
+  left: 43%;
+  transform: translateX(-50%);
+  background: grey;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  width: 85%;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  cursor: not-allowed;
 }
 
 .social-signin {
@@ -124,6 +142,7 @@ form button {
 }
 
 .logo {
+  padding-top: 10px;
   text-align: center;
   color: white;
 }

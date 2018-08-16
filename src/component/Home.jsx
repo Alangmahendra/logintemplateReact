@@ -6,9 +6,9 @@ export default class Home extends Component {
     return (
       <div>
         ini home <br/>
-        <Link to={'/adminlogin'}>
+        {/* <Link to={'/adminlogin'}>
             <button>MASUK SEBAGAI ADMIN</button>
-        </Link>
+        </Link> */}
         <Link to={'/userlogin'}>
             <button>MASUK SEBAGAI USER</button>
         </Link>

@@ -7,8 +7,8 @@ export function adminLoginAction(adminName,password){
         http.post('/admin/signin',{adminName:adminName,password:password})
         .then(response => {
             const token = response.data.data
-            localStorage.setItem('tokenAdmin',token)
-            success(token)
+            localStorage.setItem('adminToken',token)
+            dispatch(success(token))
         })
         .catch(err=>{
             dispatch(error())
