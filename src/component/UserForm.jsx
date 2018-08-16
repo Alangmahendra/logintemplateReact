@@ -5,7 +5,7 @@ import { userFormAction } from '../actions/userForm'
 import Logo from './Logo'
 import './login.css'
 import ReactCSSTG from 'react-addons-css-transition-group'
-import history from '../history'
+// import history from '../history'
 
 class UserForm extends Component {
   constructor(props) {

@@ -22,6 +22,7 @@ class UserLogin extends Component {
     if(localStorage.getItem('Usertoken')){
       history.push('/')
     }
+    console.log(this.props)
   }
   handleOnChange = (e) => {
     // console.log('bebass')
@@ -31,14 +32,22 @@ class UserLogin extends Component {
   }
 
   submitAction = (e) => {
+    const {isLoading,isError,isSuccess} = this.props.userLogin
     e.preventDefault()
     this.props.userLoginAction(this.state.email, this.state.password)
     // this.props.userLogin.isSuccess(this.state.email, this.state.password)
-    
+    if(isLoading){
+      return <h1>LOADING</h1>
+    }else if(isError){
+      history.push('/dashboardpage')
+    }else{
+      return <h1>error</h1>
+    }
   }
 
   render() {
     const { email, password } = this.state
+    // const {isLoading,isError,isSuccess} = this.props.userLogin
     return (
       <ReactCSSTG transitionName="animation" transitionAppear={true} transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
         <div className="Modal">
@@ -51,6 +60,9 @@ class UserLogin extends Component {
               <input type="password" name="password" placeholder="password" value={password} onChange={this.handleOnChange} required autoComplete='false' />
             </div>
             <button onClick={this.submitAction}>MASUK</button>
+            {
+              
+            }
             <Link to={'/resetpassword'}>
               forgot your password ?
             </Link>

@@ -13,11 +13,16 @@ export function userLoginAction(email, password) {
             .then(json => {
                 const data = json
                 console.log(data)
-                localStorage.setItem('Usertoken',data.token)
-                dispatch(success(data))
-                if(localStorage.getItem('Usertoken')){
-                    history.push('/dashboardpage')
+                if (!data.token) {
+                    history.push('/')
+                } else {
+                    dispatch(success(data))
+                    localStorage.setItem('token',data.token)
+                    if (localStorage.getItem('Usertoken')) {
+                        history.push('/dashboardpage')
+                    }
                 }
+
             })
             .catch(err => {
                 dispatch(error())
