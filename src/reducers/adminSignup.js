@@ -4,7 +4,7 @@ const initialState = {
     isSuccess:null
 }
 
-export default function adminSignup(state=initialState,action){
+export default function adminSignup(state={...initialState},action){
     switch (action.type){
         case 'LOADING' :
         return({

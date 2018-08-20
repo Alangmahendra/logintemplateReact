@@ -4,7 +4,7 @@ const initialState = {
     isSuccess:null
 }
 
-export default function userLogin(state=initialState,action){
+export default function userLogin(state={...initialState},action){
     switch (action.type){
         case 'LOADING' :
         return({

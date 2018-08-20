@@ -4,7 +4,7 @@ const initialState = {
     isSuccess:null
 }
 
-export default function resetPassword(state=initialState,action){
+export default function resetPassword(state={...initialState},action){
     switch (action.type){
         case 'LOADING' :
         return({
